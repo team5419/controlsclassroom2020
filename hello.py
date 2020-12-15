@@ -2,9 +2,10 @@ def goodbye(target):
     print("Goodbye " + target)
 
 def hello(target):
-    global hello
     print("Hello " + target)
-    hello = goobye
 
-hello("Ryan")
-hello("Ryan")
+
+targets = ["Ryan", "Raph", "Mr. Wright"]
+for target in targets:
+    hello(target)
+    goodbye(target)
