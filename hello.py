@@ -4,7 +4,7 @@ def goodbye(target):
 def hello(target):
     global hello
     print("Hello " + target)
-    hello = goobye
+    hello = goodbye
 
 hello("Ryan")
 hello("Ryan")
