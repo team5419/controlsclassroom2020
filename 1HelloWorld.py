@@ -1,18 +1,25 @@
-width = 30
-print('.')
-for i in range(width):
-    returning = '.'
-    for j in range(i):
-        returning += ' '
-    returning += '.'
-    print(returning)
-for i in range(width + 2):
-    returning = ''
-    for j in range(i):
-        returning += ' '
-    returning += '.'
-    for j in range(width - i):
-       returning += ' '
-    if(i != width + 1):
-        returning += '.'
-    print(returning)
+import math
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+breakpointCheck = 1
+returning = ''
+def convert(value):
+    if(value < 10):
+        return value
+    else:
+        return alphabet[value - 10]
+
+numInTen = int(input('What number would you like to translate? '))
+base = int(input('What base should this be in (2 to 36)? '))
+if(base < 2 or base > 36):
+    print('Not a valid base.')
+else: 
+    while breakpointCheck * base <= numInTen:
+        breakpointCheck *= base
+
+    while breakpointCheck >= 1:
+        returning += str(convert(math.floor(numInTen / breakpointCheck)))
+        numInTen -= math.floor(numInTen / breakpointCheck) * breakpointCheck
+        breakpointCheck /= base
+
+    print('Your number is ' + returning + '!')
