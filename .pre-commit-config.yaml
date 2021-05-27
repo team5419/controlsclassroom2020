@@ -4,11 +4,8 @@ repos:
     hooks:
     -   id: check-json
     -   id: check-merge-conflict
-    -   id: check-symlinks
     -   id: check-yaml
     -   id: end-of-file-fixer
-    -   id: file-contents-sorter
-        files: .gitignore
     -   id: mixed-line-ending
     -   id: pretty-format-json
         args: [--autofix]
@@ -16,7 +13,5 @@ repos:
 -   repo: https://github.com/team5419/pre-commit-hooks
     rev: v1.0.0
     hooks:
-    -   id: ktlint-wrapper
-        args: [--color, --format, --relative, --verbose]
     -   id: detekt-wrapper
         args: [--config .detekt-config.yml]
